@@ -26,7 +26,7 @@ export async function onRequest(context) {
 
   if (url.pathname === "/salir") {
     return new Response("", {
-      status: 302,
+      status: 303,
       headers: {
         Location: "/",
         "Set-Cookie": `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`,
@@ -56,7 +56,7 @@ async function handleLogin(request, env) {
 
   const token = await sessionToken(env);
   return new Response("", {
-    status: 302,
+    status: 303,
     headers: {
       Location: "/",
       "Set-Cookie": `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_DAYS * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`,
