@@ -48,16 +48,10 @@ export async function onRequest(context) {
 
 async function handleLogin(request, env) {
   const form = await request.formData();
-  const password = String(form.get("password") || "");
+  const password = String(form.get("password") || "").trim();
 
   if (password !== env.BLOQUES_PASSWORD) {
-    return new Response("", {
-      status: 302,
-      headers: {
-        Location: "/?error=1",
-        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
-      }
-    });
+    return loginPage("1", 401);
   }
 
   const token = await sessionToken(env);
@@ -92,7 +86,7 @@ async function sessionToken(env) {
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
-function loginPage(error) {
+function loginPage(error, status = 200) {
   return new Response(`<!doctype html>
 <html lang="es">
   <head>
@@ -292,11 +286,10 @@ function loginPage(error) {
     </form>
   </body>
 </html>`, {
-    status: 200,
+    status,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
     }
   });
 }
-
