@@ -41,7 +41,15 @@ const els = {
   commercialInput: document.querySelector("#commercialInput"),
   customerInput: document.querySelector("#customerInput"),
   palletsInput: document.querySelector("#palletsInput"),
-  notesInput: document.querySelector("#notesInput")
+  notesInput: document.querySelector("#notesInput"),
+  toastContainer: document.querySelector("#toastContainer"),
+  confirmDialog: document.querySelector("#confirmDialog"),
+  confirmTitle: document.querySelector("#confirmTitle"),
+  confirmMessage: document.querySelector("#confirmMessage"),
+  confirmOk: document.querySelector("#confirmOk"),
+  confirmCancel: document.querySelector("#confirmCancel"),
+  sidebar: document.querySelector("#sidebar"),
+  sidebarToggle: document.querySelector("#sidebarToggle")
 };
 
 function formatNumber(value) {
@@ -59,6 +67,21 @@ function parseWholePallets(value, fieldName = "Palets") {
 
 function today() {
   return new Date().toISOString().slice(0, 10);
+}
+
+function formatRelativeDate(dateString) {
+  if (!dateString) return "—";
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffMs = now - date;
+  const diffMins = Math.floor(diffMs / 60000);
+  const diffHours = Math.floor(diffMs / 3600000);
+  const diffDays = Math.floor(diffMs / 86400000);
+  if (diffMins < 1) return "Ahora";
+  if (diffMins < 60) return `hace ${diffMins}m`;
+  if (diffHours < 24) return `hace ${diffHours}h`;
+  if (diffDays < 7) return `hace ${diffDays}d`;
+  return date.toLocaleDateString("es-ES", { day: "2-digit", month: "short" });
 }
 
 function variantOrders(variantId) {
@@ -92,6 +115,63 @@ function setSync(text, tone = "") {
   }
   els.syncState.setAttribute("data-status", status);
   els.syncState.className = `sync-state ${tone}`.trim();
+}
+
+/* ---- Toast Notification System ---- */
+function showToast(message, type = "success") {
+  const icons = {
+    success: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="toast-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`,
+    error: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="toast-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"/></svg>`,
+    info: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="toast-icon"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"/></svg>`
+  };
+  const toast = document.createElement("div");
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `${icons[type] || icons.info}<span class="toast-message">${escapeHtml(message)}</span>`;
+  els.toastContainer.append(toast);
+  const timer = setTimeout(() => {
+    toast.classList.add("toast-leaving");
+    toast.addEventListener("animationend", () => toast.remove());
+  }, 3500);
+  toast.addEventListener("click", () => {
+    clearTimeout(timer);
+    toast.classList.add("toast-leaving");
+    toast.addEventListener("animationend", () => toast.remove());
+  });
+}
+
+/* ---- Styled Confirm Dialog ---- */
+function showConfirm(message, { title = "Confirmar", okLabel = "Aceptar", okClass = "", cancelLabel = "Cancelar" } = {}) {
+  return new Promise((resolve) => {
+    els.confirmTitle.textContent = title;
+    els.confirmMessage.textContent = message;
+    els.confirmOk.textContent = okLabel;
+    els.confirmOk.className = okClass || "";
+    els.confirmCancel.textContent = cancelLabel;
+
+    function cleanup(result) {
+      els.confirmOk.removeEventListener("click", onOk);
+      els.confirmCancel.removeEventListener("click", onCancel);
+      els.confirmDialog.removeEventListener("close", onClose);
+      resolve(result);
+    }
+    function onOk() { els.confirmDialog.close(); cleanup(true); }
+    function onCancel() { els.confirmDialog.close(); cleanup(false); }
+    function onClose() { cleanup(false); }
+
+    els.confirmOk.addEventListener("click", onOk);
+    els.confirmCancel.addEventListener("click", onCancel);
+    els.confirmDialog.addEventListener("close", onClose);
+    els.confirmDialog.showModal();
+  });
+}
+
+/* ---- Debounce utility ---- */
+function debounce(fn, ms) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), ms);
+  };
 }
 
 function saveLocal() {
@@ -333,7 +413,13 @@ async function addOrder(data) {
 }
 
 async function deleteOrder(orderId) {
-  if (!window.confirm("Borrar este pedido?")) return;
+  const confirmed = await showConfirm("¿Borrar este pedido? Esta acción no se puede deshacer.", {
+    title: "Eliminar pedido",
+    okLabel: "Borrar",
+    okClass: "btn-danger",
+    cancelLabel: "Cancelar"
+  });
+  if (!confirmed) return;
   if (state.apiMode) {
     await apiRequest(`/orders/${encodeURIComponent(orderId)}`, { method: "DELETE" });
     await loadApiData(true);
@@ -424,7 +510,11 @@ function renderProducts() {
       const available = Number(variant.stock_pallets || 0) - reserved;
       node.classList.toggle("active", variant.id === state.selectedVariantId);
       node.querySelector(".variant-name").textContent = variant.name;
-      node.querySelector(".variant-metrics").textContent = `${formatNumber(available)} disp.`;
+      const metricsEl = node.querySelector(".variant-metrics");
+      metricsEl.textContent = `${formatNumber(available)} disp.`;
+      if (available < 0) metricsEl.classList.add("stock-negative");
+      else if (available === 0) metricsEl.classList.add("stock-zero");
+      else metricsEl.classList.add("stock-ok");
       node.addEventListener("click", () => {
         state.selectedVariantId = variant.id;
         render();
@@ -502,6 +592,7 @@ function renderVariantDetail() {
             <th>Cliente / obra</th>
             <th>Notas</th>
             <th class="text-right">Palets</th>
+            <th>Fecha</th>
             <th class="text-center">Acciones</th>
           </tr>
         </thead>
@@ -516,15 +607,16 @@ function renderVariantDetail() {
               <td class="customer-cell">${escapeHtml(order.customer)}</td>
               <td class="notes-cell">${escapeHtml(order.notes || "—")}</td>
               <td class="pallets-cell text-right"><strong>${formatNumber(order.pallets)}</strong></td>
+              <td class="date-cell" title="${order.created_at || ""}">${formatRelativeDate(order.created_at)}</td>
               <td class="actions-cell text-center">
-                <button class="delete-button" data-delete="${order.id}" type="button" title="Borrar pedido">
+                <button class="delete-button" data-delete="${order.id}" type="button" title="Borrar pedido" aria-label="Borrar pedido">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                   </svg>
                 </button>
               </td>
             </tr>
-          `).join("") || `<tr><td colspan="5" class="empty-state">Sin pedidos para esta variante.</td></tr>`}
+          `).join("") || `<tr><td colspan="6" class="empty-state">Sin pedidos para esta variante.</td></tr>`}
         </tbody>
       </table>
     </div>
@@ -532,22 +624,28 @@ function renderVariantDetail() {
 
   els.variantDetail.querySelector("#stockForm").addEventListener("submit", async (event) => {
     event.preventDefault();
+    const btn = event.target.querySelector("button[type=submit]");
+    btn.classList.add("loading");
     try {
       await updateStock(
         variant.id,
         els.variantDetail.querySelector("#stockInput").value,
         els.variantDetail.querySelector("#stockDateInput").value
       );
+      showToast("Stock actualizado correctamente", "success");
     } catch (error) {
-      window.alert(error.message);
+      showToast(error.message, "error");
+    } finally {
+      btn.classList.remove("loading");
     }
   });
   for (const button of els.variantDetail.querySelectorAll("[data-delete]")) {
     button.addEventListener("click", async () => {
       try {
         await deleteOrder(button.dataset.delete);
+        showToast("Pedido eliminado", "success");
       } catch (error) {
-        window.alert(error.message);
+        showToast(error.message, "error");
       }
     });
   }
@@ -583,22 +681,34 @@ els.loginForm.addEventListener("submit", async (event) => {
 els.logoutButton.addEventListener("click", logout);
 
 els.seedButton.addEventListener("click", async () => {
-  if (!window.confirm("Importar los datos iniciales extraidos del Excel?")) return;
+  const confirmed = await showConfirm("Importar los datos iniciales extraidos del Excel?", {
+    title: "Importar datos",
+    okLabel: "Importar",
+    cancelLabel: "Cancelar"
+  });
+  if (!confirmed) return;
+  els.seedButton.classList.add("loading");
   try {
     if (state.localMode) await seedLocal();
     else await seedRemote();
+    showToast("Datos importados correctamente", "success");
   } catch (error) {
-    window.alert(error.message);
+    showToast(error.message, "error");
+  } finally {
+    els.seedButton.classList.remove("loading");
   }
 });
 
-els.searchInput.addEventListener("input", () => {
+const debouncedSearch = debounce(() => {
   state.search = els.searchInput.value.trim();
   renderProducts();
-});
+}, 200);
+els.searchInput.addEventListener("input", debouncedSearch);
 
 els.orderForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+  const btn = els.orderForm.querySelector("button[type=submit]");
+  btn.classList.add("loading");
   try {
     await addOrder({
       commercial: els.commercialInput.value,
@@ -609,8 +719,11 @@ els.orderForm.addEventListener("submit", async (event) => {
     els.customerInput.value = "";
     els.palletsInput.value = "";
     els.notesInput.value = "";
+    showToast("Pedido guardado correctamente", "success");
   } catch (error) {
-    window.alert(error.message);
+    showToast(error.message, "error");
+  } finally {
+    btn.classList.remove("loading");
   }
 });
 
@@ -631,4 +744,16 @@ if (state.apiMode) {
       els.loginMessage.textContent = "Sesion caducada. Entra otra vez.";
     });
   }
+}
+
+/* ---- Mobile Sidebar Toggle ---- */
+els.sidebarToggle.addEventListener("click", () => {
+  const isCollapsed = els.sidebar.classList.toggle("collapsed");
+  els.sidebarToggle.setAttribute("aria-expanded", String(!isCollapsed));
+});
+
+/* Start collapsed on mobile */
+if (window.matchMedia("(max-width: 768px)").matches) {
+  els.sidebar.classList.add("collapsed");
+  els.sidebarToggle.setAttribute("aria-expanded", "false");
 }

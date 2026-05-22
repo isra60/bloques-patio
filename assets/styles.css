@@ -971,6 +971,297 @@ label {
 }
 
 /* ==========================================================================
+   TOAST NOTIFICATION SYSTEM
+   ========================================================================== */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--surface-solid);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-xl);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  pointer-events: auto;
+  animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backdrop-filter: var(--glass-blur);
+}
+
+.toast.toast-leaving {
+  animation: toastSlideOut 0.28s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.toast-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  flex: 1;
+}
+
+.toast.toast-success {
+  border-left: 4px solid var(--success);
+}
+
+.toast.toast-success .toast-icon {
+  color: var(--success);
+}
+
+.toast.toast-error {
+  border-left: 4px solid var(--danger);
+}
+
+.toast.toast-error .toast-icon {
+  color: var(--danger);
+}
+
+.toast.toast-info {
+  border-left: 4px solid var(--info);
+}
+
+.toast.toast-info .toast-icon {
+  color: var(--info);
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+  }
+}
+
+/* ==========================================================================
+   STYLED CONFIRM/ALERT DIALOG
+   ========================================================================== */
+.confirm-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  margin: auto;
+  max-width: 400px;
+  width: calc(100% - 48px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-solid);
+  box-shadow: var(--shadow-xl);
+  padding: 0;
+  color: var(--text);
+  overflow: hidden;
+}
+
+.confirm-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  animation: backdropFadeIn 0.2s ease-out;
+}
+
+.confirm-dialog[open] {
+  animation: dialogScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.confirm-dialog-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.confirm-dialog-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.confirm-dialog-message {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.confirm-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-hover);
+}
+
+.confirm-dialog-actions button {
+  min-width: 90px;
+  height: 36px;
+  font-size: 13px;
+}
+
+.confirm-dialog-actions .btn-danger {
+  background: var(--danger);
+}
+
+.confirm-dialog-actions .btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+@keyframes dialogScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   BUTTON LOADING STATES
+   ========================================================================== */
+button.loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+button.loading::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: var(--radius-full);
+  animation: btnSpin 0.6s linear infinite;
+}
+
+button.secondary.loading::after {
+  border-color: var(--line-heavy);
+  border-top-color: var(--text);
+}
+
+@keyframes btnSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   SIDEBAR STOCK BADGES (Color-coded)
+   ========================================================================== */
+.variant-metrics.stock-ok {
+  background: var(--success-light);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: var(--success);
+}
+
+.variant-metrics.stock-zero {
+  background: var(--warning-light);
+  border-color: rgba(217, 119, 6, 0.25);
+  color: var(--warning);
+}
+
+.variant-metrics.stock-negative {
+  background: var(--danger-light);
+  border-color: rgba(225, 29, 72, 0.25);
+  color: var(--danger);
+  font-weight: 800;
+}
+
+/* Active row overrides for stock badges */
+.variant-row.active .variant-metrics.stock-ok {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+}
+
+.variant-row.active .variant-metrics.stock-zero {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--warning);
+}
+
+.variant-row.active .variant-metrics.stock-negative {
+  background: rgba(225, 29, 72, 0.12);
+  color: var(--danger);
+}
+
+/* ==========================================================================
+   DATE COLUMN IN ORDERS TABLE
+   ========================================================================== */
+.date-cell {
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   MOBILE SIDEBAR TOGGLE
+   ========================================================================== */
+.sidebar-toggle {
+  display: none;
+  width: 100%;
+  height: 44px;
+  background: var(--surface-hover);
+  color: var(--text);
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 8px;
+  box-shadow: none;
+}
+
+.sidebar-toggle:hover {
+  background: var(--surface-active);
+  transform: none;
+  box-shadow: none;
+}
+
+.sidebar-toggle .toggle-chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.sidebar-toggle[aria-expanded="true"] .toggle-chevron {
+  transform: rotate(180deg);
+}
+
+
+/* ==========================================================================
    RESPONSIVE DESIGN (Adaptive Media Queries)
    ========================================================================== */
 
@@ -998,13 +1289,21 @@ label {
   .sidebar {
     border-right: none;
     border-bottom: 1px solid var(--line);
-    max-height: 380px;
+    max-height: none;
   }
 
-  .product-list {
-    max-height: 300px;
+  .sidebar-toggle {
+    display: inline-flex;
   }
-  
+
+  .sidebar.collapsed .product-list {
+    display: none;
+  }
+
+  .sidebar.collapsed .toolbar {
+    display: none;
+  }
+
   .topbar {
     padding: 14px 18px;
   }
@@ -1015,6 +1314,18 @@ label {
   
   .stats-line {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: none;
+    width: 100%;
   }
 }
 

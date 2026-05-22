@@ -68,17 +68,25 @@
       </header>
 
       <main class="layout">
-        <aside class="sidebar">
-          <div class="toolbar">
-            <!-- Modernized search wrapper with inline SVG icon -->
-            <div class="search-wrapper">
-              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
-              </svg>
-              <input id="searchInput" type="search" placeholder="Buscar bloque o variante..." />
+        <aside id="sidebar" class="sidebar">
+          <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-expanded="true" aria-controls="sidebarBody">
+            <svg class="toggle-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            Productos y variantes
+          </button>
+          <div id="sidebarBody">
+            <div class="toolbar">
+              <!-- Modernized search wrapper with inline SVG icon -->
+              <div class="search-wrapper">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
+                </svg>
+                <input id="searchInput" type="search" placeholder="Buscar bloque o variante..." />
+              </div>
             </div>
+            <div id="productList" class="product-list"></div>
           </div>
-          <div id="productList" class="product-list"></div>
         </aside>
 
         <section class="content">
@@ -173,6 +181,21 @@
         </section>
       </main>
     </div>
+
+    <!-- Toast notification container -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <!-- Styled confirm/alert dialog -->
+    <dialog id="confirmDialog" class="confirm-dialog">
+      <div class="confirm-dialog-body">
+        <h3 id="confirmTitle" class="confirm-dialog-title"></h3>
+        <p id="confirmMessage" class="confirm-dialog-message"></p>
+      </div>
+      <div class="confirm-dialog-actions">
+        <button id="confirmCancel" class="secondary" type="button">Cancelar</button>
+        <button id="confirmOk" type="button">Aceptar</button>
+      </div>
+    </dialog>
 
     <template id="variantTemplate">
       <button class="variant-row" type="button">
