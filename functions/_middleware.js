@@ -283,6 +283,12 @@ function loginPage(error, status = 200) {
         text-align: center;
         min-height: 18px;
       }
+
+      .version {
+        color: var(--text-muted);
+        font-size: 11px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -304,6 +310,7 @@ function loginPage(error, status = 200) {
       </label>
       <button type="submit">Entrar</button>
       <p id="loginError" class="error">${error ? "Contraseña incorrecta" : ""}</p>
+      <p class="version">v fd1fb53</p>
     </form>
     <script>
       const form = document.getElementById("loginForm");
