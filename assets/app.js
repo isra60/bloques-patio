@@ -46,7 +46,15 @@ const els = {
 
 function formatNumber(value) {
   const number = Number(value || 0);
-  return Number.isInteger(number) ? String(number) : number.toFixed(2);
+  return String(Math.trunc(number));
+}
+
+function parseWholePallets(value, fieldName = "Palets") {
+  const number = Number(value);
+  if (!Number.isInteger(number) || number < 0) {
+    throw new Error(`${fieldName} debe ser un numero entero`);
+  }
+  return number;
 }
 
 function today() {
@@ -295,7 +303,7 @@ async function addOrder(data) {
     variant_id: state.selectedVariantId,
     commercial: data.commercial,
     customer: data.customer,
-    pallets: Number(data.pallets),
+    pallets: parseWholePallets(data.pallets),
     notes: data.notes || null
   };
 
@@ -343,7 +351,7 @@ async function deleteOrder(orderId) {
 }
 
 async function updateStock(variantId, stockPallets, stockDate) {
-  const stockValue = Number(stockPallets);
+  const stockValue = parseWholePallets(stockPallets, "Stock");
   const dateValue = stockDate || today();
 
   if (state.apiMode) {
@@ -451,7 +459,7 @@ function renderVariantDetail() {
     <form class="stock-editor" id="stockForm">
       <div class="editor-field">
         <label for="stockInput">Stock palets</label>
-        <input id="stockInput" type="number" min="0" step="0.01" value="${stock}" required>
+        <input id="stockInput" type="number" min="0" step="1" inputmode="numeric" value="${stock}" required>
       </div>
       <div class="editor-field">
         <label for="stockDateInput">Fecha stock</label>

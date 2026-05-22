@@ -33,7 +33,8 @@ export async function onRequest(context) {
 
     return text("No encontrado", 404);
   } catch (error) {
-    return text(error.message || "Error interno", 500);
+    const status = error.status || 500;
+    return text(error.message || "Error interno", status);
   }
 }
 
@@ -58,10 +59,13 @@ async function createOrder(db, body) {
   const notes = body.notes ? String(body.notes) : null;
 
   if (!["JESUS", "FERNANDO"].includes(commercial)) {
-    throw new Error("Comercial no valido");
+    throw validationError("Comercial no valido");
   }
   if (!Number.isFinite(pallets) || pallets <= 0) {
-    throw new Error("Palets no valido");
+    throw validationError("Palets no valido");
+  }
+  if (!Number.isInteger(pallets)) {
+    throw validationError("Los palets deben ser unidades completas");
   }
 
   const id = crypto.randomUUID();
@@ -75,7 +79,10 @@ async function createOrder(db, body) {
 async function updateVariant(db, id, body) {
   const stock = Number(body.stock_pallets);
   if (!Number.isFinite(stock) || stock < 0) {
-    throw new Error("Stock no valido");
+    throw validationError("Stock no valido");
+  }
+  if (!Number.isInteger(stock)) {
+    throw validationError("El stock debe ser un numero entero de palets");
   }
   const stockDate = body.stock_date ? String(body.stock_date) : new Date().toISOString().slice(0, 10);
   await db.prepare(`
@@ -87,8 +94,14 @@ async function updateVariant(db, id, body) {
 
 function required(value, field) {
   const textValue = String(value || "").trim();
-  if (!textValue) throw new Error(`Falta ${field}`);
+  if (!textValue) throw validationError(`Falta ${field}`);
   return textValue;
+}
+
+function validationError(message) {
+  const error = new Error(message);
+  error.status = 400;
+  return error;
 }
 
 function json(data, status = 200) {
