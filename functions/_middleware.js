@@ -1,4 +1,5 @@
 const SESSION_COOKIE = "bloques_session";
+const CLIENT_SESSION_COOKIE = "bloques_client_session";
 const SESSION_DAYS = 7;
 
 export async function onRequest(context) {
@@ -25,13 +26,15 @@ export async function onRequest(context) {
   }
 
   if (url.pathname === "/salir") {
+    const headers = new Headers({
+      Location: "/",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+    });
+    headers.append("Set-Cookie", `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`);
+    headers.append("Set-Cookie", `${CLIENT_SESSION_COOKIE}=; Path=/; Max-Age=0; Secure; SameSite=Lax`);
     return new Response("", {
       status: 303,
-      headers: {
-        Location: "/",
-        "Set-Cookie": `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`,
-        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
-      }
+      headers
     });
   }
 
@@ -70,7 +73,7 @@ async function handleLogin(request, env) {
   const cookie = `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_DAYS * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`;
 
   if (wantsJson) {
-    return json({ ok: true }, 200, {
+    return json({ ok: true, token, maxAge: SESSION_DAYS * 24 * 60 * 60 }, 200, {
       "Set-Cookie": cookie,
       "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
     });
@@ -94,7 +97,7 @@ async function hasValidSession(request, env) {
   for (const cookie of cookies) {
     const [name, ...valueParts] = cookie.split("=");
     const value = valueParts.join("=");
-    if (name === SESSION_COOKIE && value === expectedToken) {
+    if ((name === SESSION_COOKIE || name === CLIENT_SESSION_COOKIE) && value === expectedToken) {
       return true;
     }
   }
@@ -310,7 +313,7 @@ function loginPage(error, status = 200) {
       </label>
       <button type="submit">Entrar</button>
       <p id="loginError" class="error">${error ? "Contraseña incorrecta" : ""}</p>
-      <p class="version">v fd1fb53</p>
+      <p class="version">v cookie-fix</p>
     </form>
     <script>
       const form = document.getElementById("loginForm");
@@ -336,6 +339,9 @@ function loginPage(error, status = 200) {
             button.disabled = false;
             button.textContent = "Entrar";
             return;
+          }
+          if (data.token && data.maxAge) {
+            document.cookie = "${CLIENT_SESSION_COOKIE}=" + data.token + "; Path=/; Max-Age=" + data.maxAge + "; Secure; SameSite=Lax";
           }
           window.location.replace("/");
         } catch (loginError) {
