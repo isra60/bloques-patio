@@ -65,6 +65,11 @@ function selectedVariant() {
   return state.variants.find((variant) => variant.id === state.selectedVariantId) || null;
 }
 
+function isEditingStockForm() {
+  const active = document.activeElement;
+  return Boolean(active && els.variantDetail.contains(active) && active.closest("#stockForm"));
+}
+
 function setSync(text, tone = "") {
   els.syncState.textContent = text;
   // Dynamically compute connection status for CSS indicator animation
@@ -177,13 +182,14 @@ async function apiRequest(path, options = {}) {
 
 async function loadApiData(silent = false) {
   if (!silent) setSync("Sincronizando...");
+  const preserveStockForm = silent && isEditingStockForm();
   const data = await apiRequest("/state");
   state.products = data.products || [];
   state.variants = data.variants || [];
   state.orders = data.orders || [];
   if (!state.selectedVariantId && state.variants[0]) state.selectedVariantId = state.variants[0].id;
   setSync("Conectado");
-  render();
+  render({ preserveStockForm });
 }
 
 function startApiPolling() {
@@ -337,11 +343,20 @@ async function deleteOrder(orderId) {
 }
 
 async function updateStock(variantId, stockPallets, stockDate) {
+  const stockValue = Number(stockPallets);
+  const dateValue = stockDate || today();
+
   if (state.apiMode) {
     await apiRequest(`/variants/${encodeURIComponent(variantId)}`, {
       method: "PATCH",
-      body: JSON.stringify({ stock_pallets: Number(stockPallets), stock_date: stockDate || today() })
+      body: JSON.stringify({ stock_pallets: stockValue, stock_date: dateValue })
     });
+    const variant = state.variants.find((item) => item.id === variantId);
+    if (variant) {
+      variant.stock_pallets = stockValue;
+      variant.stock_date = dateValue;
+    }
+    render();
     await loadApiData(true);
     return;
   }
@@ -349,8 +364,8 @@ async function updateStock(variantId, stockPallets, stockDate) {
   if (state.localMode) {
     const variant = state.variants.find((item) => item.id === variantId);
     if (variant) {
-      variant.stock_pallets = Number(stockPallets);
-      variant.stock_date = stockDate || today();
+      variant.stock_pallets = stockValue;
+      variant.stock_date = dateValue;
       variant.updated_at = new Date().toISOString();
       saveLocal();
       render();
@@ -359,7 +374,7 @@ async function updateStock(variantId, stockPallets, stockDate) {
   }
   const { error } = await supabaseClient
     .from("variants")
-    .update({ stock_pallets: Number(stockPallets), stock_date: stockDate || today() })
+    .update({ stock_pallets: stockValue, stock_date: dateValue })
     .eq("id", variantId);
   if (error) throw error;
 }
@@ -539,10 +554,12 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-function render() {
+function render(options = {}) {
   renderSummary();
   renderProducts();
-  renderVariantDetail();
+  if (!options.preserveStockForm) {
+    renderVariantDetail();
+  }
 }
 
 els.loginForm.addEventListener("submit", async (event) => {
