@@ -47,19 +47,40 @@ export async function onRequest(context) {
 }
 
 async function handleLogin(request, env) {
-  const form = await request.formData();
-  const password = String(form.get("password") || "").trim();
+  const wantsJson = (request.headers.get("Accept") || "").includes("application/json");
+  const contentType = request.headers.get("Content-Type") || "";
+  let password = "";
+
+  if (contentType.includes("application/json")) {
+    const body = await request.json();
+    password = String(body.password || "").trim();
+  } else {
+    const form = await request.formData();
+    password = String(form.get("password") || "").trim();
+  }
 
   if (password !== env.BLOQUES_PASSWORD) {
+    if (wantsJson) {
+      return json({ ok: false, message: "Contraseña incorrecta" }, 401);
+    }
     return loginPage("1", 401);
   }
 
   const token = await sessionToken(env);
+  const cookie = `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_DAYS * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`;
+
+  if (wantsJson) {
+    return json({ ok: true }, 200, {
+      "Set-Cookie": cookie,
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+    });
+  }
+
   return new Response("", {
     status: 303,
     headers: {
       Location: "/",
-      "Set-Cookie": `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_DAYS * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`,
+      "Set-Cookie": cookie,
       "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
     }
   });
@@ -265,7 +286,7 @@ function loginPage(error, status = 200) {
     </style>
   </head>
   <body>
-    <form method="post" action="/acceso">
+    <form id="loginForm" method="post" action="/acceso">
       <div class="login-header">
         <div class="logo-badge">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -282,14 +303,57 @@ function loginPage(error, status = 200) {
         <input name="password" type="password" autocomplete="current-password" autofocus required placeholder="••••••••">
       </label>
       <button type="submit">Entrar</button>
-      <p class="error">${error ? "Contraseña incorrecta" : ""}</p>
+      <p id="loginError" class="error">${error ? "Contraseña incorrecta" : ""}</p>
     </form>
+    <script>
+      const form = document.getElementById("loginForm");
+      const error = document.getElementById("loginError");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        error.textContent = "";
+        const button = form.querySelector("button");
+        button.disabled = true;
+        button.textContent = "Entrando...";
+        try {
+          const response = await fetch("/acceso", {
+            method: "POST",
+            headers: {
+              "Accept": "application/json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ password: form.password.value })
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.ok) {
+            error.textContent = data.message || "Contraseña incorrecta";
+            button.disabled = false;
+            button.textContent = "Entrar";
+            return;
+          }
+          window.location.replace("/");
+        } catch (loginError) {
+          error.textContent = "No se pudo conectar. Recarga la pagina e intentalo otra vez.";
+          button.disabled = false;
+          button.textContent = "Entrar";
+        }
+      });
+    </script>
   </body>
 </html>`, {
     status,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+    }
+  });
+}
+
+function json(data, status = 200, extraHeaders = {}) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      ...extraHeaders
     }
   });
 }
