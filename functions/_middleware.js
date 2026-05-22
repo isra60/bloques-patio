@@ -5,6 +5,17 @@ export async function onRequest(context) {
   const { request, env, next } = context;
   const url = new URL(request.url);
 
+  // Enforce HTTPS in production
+  if (url.protocol === "http:" && !url.hostname.includes("localhost") && !url.hostname.includes("127.0.0.1")) {
+    return new Response("", {
+      status: 301,
+      headers: {
+        Location: request.url.replace("http://", "https://"),
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+      }
+    });
+  }
+
   if (!env.BLOQUES_PASSWORD) {
     return new Response("Falta configurar BLOQUES_PASSWORD en Cloudflare Pages.", { status: 500 });
   }
@@ -18,7 +29,8 @@ export async function onRequest(context) {
       status: 302,
       headers: {
         Location: "/",
-        "Set-Cookie": `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`
+        "Set-Cookie": `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`,
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
       }
     });
   }
@@ -41,7 +53,10 @@ async function handleLogin(request, env) {
   if (password !== env.BLOQUES_PASSWORD) {
     return new Response("", {
       status: 302,
-      headers: { Location: "/?error=1" }
+      headers: {
+        Location: "/?error=1",
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+      }
     });
   }
 
@@ -50,16 +65,25 @@ async function handleLogin(request, env) {
     status: 302,
     headers: {
       Location: "/",
-      "Set-Cookie": `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_DAYS * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`
+      "Set-Cookie": `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_DAYS * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`,
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
     }
   });
 }
 
 async function hasValidSession(request, env) {
-  const cookie = request.headers.get("Cookie") || "";
-  const match = cookie.match(new RegExp(`${SESSION_COOKIE}=([^;]+)`));
-  if (!match) return false;
-  return match[1] === await sessionToken(env);
+  const cookieHeader = request.headers.get("Cookie") || "";
+  const cookies = cookieHeader.split(";").map((c) => c.trim());
+  const expectedToken = await sessionToken(env);
+
+  for (const cookie of cookies) {
+    const [name, ...valueParts] = cookie.split("=");
+    const value = valueParts.join("=");
+    if (name === SESSION_COOKIE && value === expectedToken) {
+      return true;
+    }
+  }
+  return false;
 }
 
 async function sessionToken(env) {
@@ -269,7 +293,10 @@ function loginPage(error) {
   </body>
 </html>`, {
     status: 200,
-    headers: { "Content-Type": "text/html; charset=utf-8" }
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+    }
   });
 }
 
