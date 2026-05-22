@@ -15,29 +15,26 @@ App web para sustituir el Excel de existencias y reservas de bloques por una bas
 ## Arquitectura
 
 - Frontend estatico: `index.html`, `assets/app.js`, `assets/styles.css`.
-- Base de datos: Supabase Postgres + Realtime.
-- Acceso: un usuario tecnico compartido en Supabase Auth. La app solo pide contrasena.
-- Publicacion: GitHub Pages puede servir la web.
+- Backend: Cloudflare Pages Functions.
+- Base de datos: Cloudflare D1.
+- Acceso: contrasena compartida en `BLOQUES_PASSWORD`, sin usuarios individuales.
+- Publicacion: Cloudflare Pages.
 
-GitHub Pages no soporta contrasena real de servidor. En esta app el repositorio/pagina puede ser publico, pero los datos quedan protegidos por Supabase Auth y RLS. Si necesitas ocultar tambien el HTML, publica el mismo frontend en Cloudflare Pages, Netlify o Vercel con Basic Auth/Access.
+La app refresca los datos automaticamente cada pocos segundos para que los cambios aparezcan en otras pantallas abiertas. Para 5 usuarios, este enfoque es suficiente y evita servicios de pago.
 
 ## Puesta en marcha
 
-1. Crea un proyecto en Supabase.
-2. En SQL Editor, ejecuta `database/schema.sql`.
-3. En Authentication > Users, crea un usuario compartido, por ejemplo `bloques@empresa.local`, con la contrasena que usara todo el equipo.
-4. Copia `config.example.js` como `config.js`.
-5. Rellena `config.js` con `supabaseUrl`, `supabaseAnonKey` y `sharedEmail`.
-6. Abre la web, entra con la contrasena compartida y pulsa `Importar Excel inicial` si la base de datos esta vacia.
+1. Crea una base D1 en Cloudflare.
+2. Ejecuta `database/d1-schema.sql`.
+3. Ejecuta `database/d1-seed.sql`.
+4. Configura `BLOQUES_PASSWORD` como secreto/variable de Cloudflare Pages.
+5. Despliega Cloudflare Pages.
 
-## Publicar en GitHub Pages
+## Publicar en Cloudflare Pages
 
-En GitHub:
+La opcion recomendada para esta app es Cloudflare Pages, porque permite proteger el acceso con una funcion gratuita antes de servir la web.
 
-1. Crea el repositorio `bloques-patio` en el usuario `isra60`.
-2. Sube estos archivos.
-3. En Settings > Pages, selecciona Deploy from branch, rama `main`, carpeta `/`.
-4. La web quedara en `https://isra60.github.io/bloques-patio/`.
-
-No subas credenciales privadas. El `anon key` de Supabase esta pensado para frontend; la seguridad la ponen RLS y el login compartido.
-
+1. Conecta Cloudflare Pages al repositorio `isra60/bloques-patio`.
+2. Usa raiz `/` como carpeta de salida.
+3. Configura la variable secreta `BLOQUES_PASSWORD` con la contrasena compartida.
+4. La funcion `functions/_middleware.js` pedira esa contrasena antes de cargar la app.

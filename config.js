@@ -1,6 +1,4 @@
 window.BLOQUES_CONFIG = {
-  supabaseUrl: "",
-  supabaseAnonKey: "",
-  sharedEmail: "bloques@empresa.local"
+  apiBase: "/api",
+  pollIntervalMs: 3000
 };
-

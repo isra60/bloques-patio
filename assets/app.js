@@ -1,4 +1,6 @@
 const config = window.BLOQUES_CONFIG || {};
+const apiBase = config.apiBase || "";
+const apiMode = Boolean(apiBase);
 const hasSupabaseConfig = Boolean(config.supabaseUrl && config.supabaseAnonKey && config.sharedEmail);
 const supabaseClient = hasSupabaseConfig
   ? window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey)
@@ -10,7 +12,8 @@ const state = {
   orders: [],
   selectedVariantId: null,
   search: "",
-  localMode: !hasSupabaseConfig,
+  localMode: !hasSupabaseConfig && !apiMode,
+  apiMode,
   channel: null
 };
 
@@ -138,6 +141,43 @@ async function loadRemoteData() {
   render();
 }
 
+async function apiRequest(path, options = {}) {
+  const response = await fetch(`${apiBase}${path}`, {
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {})
+    },
+    ...options
+  });
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(message || `Error ${response.status}`);
+  }
+  if (response.status === 204) return null;
+  return response.json();
+}
+
+async function loadApiData(silent = false) {
+  if (!silent) setSync("Sincronizando...");
+  const data = await apiRequest("/state");
+  state.products = data.products || [];
+  state.variants = data.variants || [];
+  state.orders = data.orders || [];
+  if (!state.selectedVariantId && state.variants[0]) state.selectedVariantId = state.variants[0].id;
+  setSync("Conectado");
+  render();
+}
+
+function startApiPolling() {
+  window.setInterval(async () => {
+    try {
+      await loadApiData(true);
+    } catch (error) {
+      setSync("Sin conexion");
+    }
+  }, Number(config.pollIntervalMs || 3000));
+}
+
 function subscribeRealtime() {
   if (!supabaseClient || state.channel) return;
   state.channel = supabaseClient
@@ -151,6 +191,10 @@ function subscribeRealtime() {
 }
 
 async function login(password) {
+  if (state.apiMode) {
+    return;
+  }
+
   if (state.localMode) {
     els.loginMessage.textContent = "";
     els.loginView.classList.add("hidden");
@@ -175,6 +219,11 @@ async function login(password) {
 }
 
 async function logout() {
+  if (state.apiMode) {
+    window.location.href = "/salir";
+    return;
+  }
+
   if (supabaseClient) await supabaseClient.auth.signOut();
   if (state.channel) {
     supabaseClient.removeChannel(state.channel);
@@ -195,6 +244,15 @@ async function addOrder(data) {
     notes: data.notes || null
   };
 
+  if (state.apiMode) {
+    await apiRequest("/orders", {
+      method: "POST",
+      body: JSON.stringify(row)
+    });
+    await loadApiData(true);
+    return;
+  }
+
   if (state.localMode) {
     state.orders.unshift({
       id: crypto.randomUUID(),
@@ -213,6 +271,12 @@ async function addOrder(data) {
 
 async function deleteOrder(orderId) {
   if (!window.confirm("Borrar este pedido?")) return;
+  if (state.apiMode) {
+    await apiRequest(`/orders/${encodeURIComponent(orderId)}`, { method: "DELETE" });
+    await loadApiData(true);
+    return;
+  }
+
   if (state.localMode) {
     state.orders = state.orders.filter((order) => order.id !== orderId);
     saveLocal();
@@ -224,6 +288,15 @@ async function deleteOrder(orderId) {
 }
 
 async function updateStock(variantId, stockPallets, stockDate) {
+  if (state.apiMode) {
+    await apiRequest(`/variants/${encodeURIComponent(variantId)}`, {
+      method: "PATCH",
+      body: JSON.stringify({ stock_pallets: Number(stockPallets), stock_date: stockDate || today() })
+    });
+    await loadApiData(true);
+    return;
+  }
+
   if (state.localMode) {
     const variant = state.variants.find((item) => item.id === variantId);
     if (variant) {
@@ -432,3 +505,12 @@ if (state.localMode) {
   els.loginMessage.textContent = "Falta config.js: entrara en modo demo local.";
 }
 
+if (state.apiMode) {
+  els.loginView.classList.add("hidden");
+  els.appView.classList.remove("hidden");
+  els.seedButton.classList.add("hidden");
+  loadApiData().then(startApiPolling).catch((error) => {
+    setSync("Error");
+    window.alert(error.message);
+  });
+}
