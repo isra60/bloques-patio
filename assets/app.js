@@ -65,6 +65,17 @@ function selectedVariant() {
 
 function setSync(text, tone = "") {
   els.syncState.textContent = text;
+  // Dynamically compute connection status for CSS indicator animation
+  let status = "disconnected";
+  const lowerText = text.toLowerCase();
+  if (lowerText.includes("conectado") || lowerText.includes("activo") || lowerText.includes("local")) {
+    status = "connected";
+  } else if (lowerText.includes("sincronizando") || lowerText.includes("importando")) {
+    status = "syncing";
+  } else if (lowerText.includes("sin conexion") || lowerText.includes("error")) {
+    status = "disconnected";
+  }
+  els.syncState.setAttribute("data-status", status);
   els.syncState.className = `sync-state ${tone}`.trim();
 }
 
@@ -385,39 +396,77 @@ function renderVariantDetail() {
   els.variantDetail.className = "variant-detail";
   els.variantDetail.innerHTML = `
     <form class="stock-editor" id="stockForm">
-      <label>Stock palets <input id="stockInput" type="number" min="0" step="0.01" value="${stock}"></label>
-      <label>Fecha stock <input id="stockDateInput" type="date" value="${variant.stock_date || today()}"></label>
-      <button type="submit">Actualizar</button>
+      <div class="editor-field">
+        <label for="stockInput">Stock palets</label>
+        <input id="stockInput" type="number" min="0" step="0.01" value="${stock}" required>
+      </div>
+      <div class="editor-field">
+        <label for="stockDateInput">Fecha stock</label>
+        <input id="stockDateInput" type="date" value="${variant.stock_date || today()}" required>
+      </div>
+      <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" class="btn-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+        </svg>
+        Actualizar
+      </button>
     </form>
     <div class="stats-line">
-      <div><span>Stock</span><strong>${formatNumber(stock)}</strong></div>
-      <div><span>Reservado</span><strong>${formatNumber(reserved)}</strong></div>
-      <div><span>Disponible</span><strong class="${available < 0 ? "negative" : ""}">${formatNumber(available)}</strong></div>
-      <div><span>Jesus / Fernando</span><strong>${formatNumber(byJesus)} / ${formatNumber(byFernando)}</strong></div>
+      <div class="stat-box">
+        <span>Stock Actual</span>
+        <strong>${formatNumber(stock)}</strong>
+      </div>
+      <div class="stat-box">
+        <span>Reservado</span>
+        <strong class="stat-reserved">${formatNumber(reserved)}</strong>
+      </div>
+      <div class="stat-box">
+        <span>Disponible</span>
+        <strong class="${available < 0 ? "negative" : "positive"}">${formatNumber(available)}</strong>
+      </div>
+      <div class="stat-box">
+        <span>Por Comercial</span>
+        <div class="commercial-split">
+          <span class="split-rep jesus">J: <strong>${formatNumber(byJesus)}</strong></span>
+          <span class="split-divider">|</span>
+          <span class="split-rep fernando">F: <strong>${formatNumber(byFernando)}</strong></span>
+        </div>
+      </div>
     </div>
-    <table class="orders-table">
-      <thead>
-        <tr>
-          <th>Comercial</th>
-          <th>Cliente / obra</th>
-          <th>Notas</th>
-          <th>Palets</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        ${orders.map((order) => `
+    <div class="table-container">
+      <table class="orders-table">
+        <thead>
           <tr>
-            <td><span class="pill">${order.commercial === "JESUS" ? "Jesus" : "Fernando"}</span></td>
-            <td>${escapeHtml(order.customer)}</td>
-            <td>${escapeHtml(order.notes || "")}</td>
-            <td><strong>${formatNumber(order.pallets)}</strong></td>
-            <td><button class="delete-button" data-delete="${order.id}" type="button">Borrar</button></td>
+            <th>Comercial</th>
+            <th>Cliente / obra</th>
+            <th>Notas</th>
+            <th class="text-right">Palets</th>
+            <th class="text-center">Acciones</th>
           </tr>
-        `).join("") || `<tr><td colspan="5" class="empty-state">Sin pedidos para esta variante.</td></tr>`}
-      </tbody>
-    </table>
-  `;
+        </thead>
+        <tbody>
+          ${orders.map((order) => `
+            <tr>
+              <td>
+                <span class="pill commercial-${order.commercial.toLowerCase()}">
+                  ${order.commercial === "JESUS" ? "Jesús" : "Fernando"}
+                </span>
+              </td>
+              <td class="customer-cell">${escapeHtml(order.customer)}</td>
+              <td class="notes-cell">${escapeHtml(order.notes || "—")}</td>
+              <td class="pallets-cell text-right"><strong>${formatNumber(order.pallets)}</strong></td>
+              <td class="actions-cell text-center">
+                <button class="delete-button" data-delete="${order.id}" type="button" title="Borrar pedido">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          `).join("") || `<tr><td colspan="5" class="empty-state">Sin pedidos para esta variante.</td></tr>`}
+        </tbody>
+      </table>
+    </div>
 
   els.variantDetail.querySelector("#stockForm").addEventListener("submit", async (event) => {
     event.preventDefault();
