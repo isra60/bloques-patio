@@ -14,7 +14,9 @@ const state = {
   search: "",
   localMode: !hasSupabaseConfig && !apiMode,
   apiMode,
-  channel: null
+  channel: null,
+  apiToken: localStorage.getItem("bloques-api-token") || "",
+  apiPollingStarted: false
 };
 
 const els = {
@@ -153,12 +155,17 @@ async function loadRemoteData() {
 }
 
 async function apiRequest(path, options = {}) {
+  const headers = {
+    "Content-Type": "application/json",
+    ...(options.headers || {})
+  };
+  if (state.apiToken) {
+    headers.Authorization = `Bearer ${state.apiToken}`;
+  }
+
   const response = await fetch(`${apiBase}${path}`, {
-    headers: {
-      "Content-Type": "application/json",
-      ...(options.headers || {})
-    },
-    ...options
+    ...options,
+    headers,
   });
   if (!response.ok) {
     const message = await response.text();
@@ -180,6 +187,8 @@ async function loadApiData(silent = false) {
 }
 
 function startApiPolling() {
+  if (state.apiPollingStarted) return;
+  state.apiPollingStarted = true;
   window.setInterval(async () => {
     try {
       await loadApiData(true);
@@ -203,6 +212,26 @@ function subscribeRealtime() {
 
 async function login(password) {
   if (state.apiMode) {
+    const response = await fetch("/acceso", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ password })
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.ok || !data.token) {
+      throw new Error(data.message || "Contrasena incorrecta");
+    }
+    state.apiToken = data.token;
+    localStorage.setItem("bloques-api-token", state.apiToken);
+    els.loginMessage.textContent = "";
+    els.loginView.classList.add("hidden");
+    els.appView.classList.remove("hidden");
+    els.seedButton.classList.add("hidden");
+    await loadApiData();
+    startApiPolling();
     return;
   }
 
@@ -231,7 +260,16 @@ async function login(password) {
 
 async function logout() {
   if (state.apiMode) {
-    window.location.href = "/salir";
+    localStorage.removeItem("bloques-api-token");
+    state.apiToken = "";
+    state.products = [];
+    state.variants = [];
+    state.orders = [];
+    state.selectedVariantId = null;
+    await fetch("/salir").catch(() => {});
+    els.appView.classList.add("hidden");
+    els.loginView.classList.remove("hidden");
+    els.passwordInput.value = "";
     return;
   }
 
@@ -467,6 +505,7 @@ function renderVariantDetail() {
         </tbody>
       </table>
     </div>
+  `;
 
   els.variantDetail.querySelector("#stockForm").addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -555,11 +594,16 @@ if (state.localMode) {
 }
 
 if (state.apiMode) {
-  els.loginView.classList.add("hidden");
-  els.appView.classList.remove("hidden");
   els.seedButton.classList.add("hidden");
-  loadApiData().then(startApiPolling).catch((error) => {
-    setSync("Error");
-    window.alert(error.message);
-  });
+  if (state.apiToken) {
+    els.loginView.classList.add("hidden");
+    els.appView.classList.remove("hidden");
+    loadApiData().then(startApiPolling).catch(() => {
+      localStorage.removeItem("bloques-api-token");
+      state.apiToken = "";
+      els.appView.classList.add("hidden");
+      els.loginView.classList.remove("hidden");
+      els.loginMessage.textContent = "Sesion caducada. Entra otra vez.";
+    });
+  }
 }

@@ -38,15 +38,15 @@ export async function onRequest(context) {
     });
   }
 
+  if (!url.pathname.startsWith("/api/")) {
+    return next();
+  }
+
   if (await hasValidSession(request, env)) {
     return next();
   }
 
-  if (request.method !== "GET" && request.method !== "HEAD") {
-    return new Response("No autorizado", { status: 401 });
-  }
-
-  return loginPage(url.searchParams.get("error"));
+  return json({ ok: false, message: "No autorizado" }, 401);
 }
 
 async function handleLogin(request, env) {
@@ -90,9 +90,14 @@ async function handleLogin(request, env) {
 }
 
 async function hasValidSession(request, env) {
+  const auth = request.headers.get("Authorization") || "";
+  const expectedToken = await sessionToken(env);
+  if (auth === `Bearer ${expectedToken}`) {
+    return true;
+  }
+
   const cookieHeader = request.headers.get("Cookie") || "";
   const cookies = cookieHeader.split(";").map((c) => c.trim());
-  const expectedToken = await sessionToken(env);
 
   for (const cookie of cookies) {
     const [name, ...valueParts] = cookie.split("=");
