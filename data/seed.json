@@ -1,0 +1,2169 @@
+{
+  "source": "C:\\Users\\isra6\\Downloads\\0000 LISTADO BLOQUE PATIO.xlsx",
+  "generated_at": "2026-05-22T16:52:13.560980+00:00",
+  "products": [
+    {
+      "id": "lisos-20-colores",
+      "name": "BLOQUES 20 LISOS COLORES",
+      "source_sheet": "LISOS 20 COLORES",
+      "position": 0
+    },
+    {
+      "id": "split-20-colores",
+      "name": "BLOQUES SPLIT COLORES, GRIS Y GRANITO",
+      "source_sheet": "SPLIT 20 COLORES",
+      "position": 1
+    },
+    {
+      "id": "liso-15-colores",
+      "name": "BLOQUES LISOS 15 COLORES",
+      "source_sheet": "LISO 15 COLORES ",
+      "position": 2
+    },
+    {
+      "id": "split-15-colores-y-gris",
+      "name": "BLOQUES SPLIT 15 COLORES Y GRIS",
+      "source_sheet": "SPLIT 15 COLORES Y GRIS",
+      "position": 3
+    },
+    {
+      "id": "split-20-2caras",
+      "name": "BLOQUE 40X20X20 SPLIT 2 CARAS LARGAS",
+      "source_sheet": "SPLIT 20 2CARAS",
+      "position": 4
+    },
+    {
+      "id": "bloque-40x20x20-liso-gris",
+      "name": "BLOQUE 40X20X20 LISO GRIS ",
+      "source_sheet": "BLOQUE 40X20X20 LISO GRIS ",
+      "position": 5
+    },
+    {
+      "id": "bloque-40x20x15",
+      "name": "BLOQUE 40X20X15",
+      "source_sheet": "BLOQUE 40X20X15",
+      "position": 6
+    },
+    {
+      "id": "bloque-h25",
+      "name": "BLOQUE H25",
+      "source_sheet": "BLOQUE H25",
+      "position": 7
+    }
+  ],
+  "variants": [
+    {
+      "id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "product_id": "lisos-20-colores",
+      "name": "BLANCO SEVILLA",
+      "raw_header": "BLANCO SEVILLA 72 (18-05-26)",
+      "stock_pallets": 72.0,
+      "stock_date": "2026-05-18",
+      "position": 0
+    },
+    {
+      "id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "product_id": "lisos-20-colores",
+      "name": "BLANCO CASTILLA",
+      "raw_header": "BLANCO CASTILLA 173 P (18 05 2026)",
+      "stock_pallets": 173.0,
+      "stock_date": "2026-05-18",
+      "position": 1
+    },
+    {
+      "id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "product_id": "lisos-20-colores",
+      "name": "CREMA",
+      "raw_header": "CREMA 153 PALETS (18 05 2026)",
+      "stock_pallets": 153.0,
+      "stock_date": "2026-05-18",
+      "position": 2
+    },
+    {
+      "id": "lisos-20-colores-salmon-70-palets-18-05-2026",
+      "product_id": "lisos-20-colores",
+      "name": "SALMON",
+      "raw_header": "SALMON 70 PALETS (18 05 2026)",
+      "stock_pallets": 70.0,
+      "stock_date": "2026-05-18",
+      "position": 3
+    },
+    {
+      "id": "lisos-20-colores-amarillo-91-palets-18-05-2026",
+      "product_id": "lisos-20-colores",
+      "name": "AMARILLO",
+      "raw_header": "AMARILLO 91 PALETS (18 05 2026)",
+      "stock_pallets": 91.0,
+      "stock_date": "2026-05-18",
+      "position": 4
+    },
+    {
+      "id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "product_id": "split-20-colores",
+      "name": "B. SEVILLA",
+      "raw_header": "B. SEVILLA 97 PALETS (18 05 2026)",
+      "stock_pallets": 97.0,
+      "stock_date": "2026-05-18",
+      "position": 100
+    },
+    {
+      "id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "product_id": "split-20-colores",
+      "name": "B. CASTILLA",
+      "raw_header": "B. CASTILLA 64 PALETS (19 05 2026)",
+      "stock_pallets": 64.0,
+      "stock_date": "2026-05-19",
+      "position": 101
+    },
+    {
+      "id": "split-20-colores-crema-20-palets-18-05-2026",
+      "product_id": "split-20-colores",
+      "name": "CREMA",
+      "raw_header": "CREMA 20 PALETS (18 05 2026)",
+      "stock_pallets": 20.0,
+      "stock_date": "2026-05-18",
+      "position": 102
+    },
+    {
+      "id": "split-20-colores-salmon-56-palets-18-05-2026",
+      "product_id": "split-20-colores",
+      "name": "SALMON",
+      "raw_header": "SALMON 56 PALETS (18 05 2026)",
+      "stock_pallets": 56.0,
+      "stock_date": "2026-05-18",
+      "position": 103
+    },
+    {
+      "id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "product_id": "split-20-colores",
+      "name": "AMARILLO",
+      "raw_header": "AMARILLO 0 PALETS (18 05 2026)",
+      "stock_pallets": 0.0,
+      "stock_date": "2026-05-18",
+      "position": 104
+    },
+    {
+      "id": "split-20-colores-gris-61-palets-18-05-2026",
+      "product_id": "split-20-colores",
+      "name": "GRIS",
+      "raw_header": "GRIS 61 PALETS (18 05 2026)",
+      "stock_pallets": 61.0,
+      "stock_date": "2026-05-18",
+      "position": 105
+    },
+    {
+      "id": "split-20-colores-granito-136-palets-18-05-2026",
+      "product_id": "split-20-colores",
+      "name": "GRANITO",
+      "raw_header": "GRANITO 136 PALETS (18 05 2026)",
+      "stock_pallets": 136.0,
+      "stock_date": "2026-05-18",
+      "position": 106
+    },
+    {
+      "id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "product_id": "liso-15-colores",
+      "name": "BLANCO SEVILLA",
+      "raw_header": "BLANCO SEVILLA 80 P (19 05 2026)",
+      "stock_pallets": 80.0,
+      "stock_date": "2026-05-19",
+      "position": 200
+    },
+    {
+      "id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "product_id": "liso-15-colores",
+      "name": "BLANCO CASTILLA",
+      "raw_header": "BLANCO CASTILLA 37 P (18 05 2026)",
+      "stock_pallets": 37.0,
+      "stock_date": "2026-05-18",
+      "position": 201
+    },
+    {
+      "id": "liso-15-colores-crema-73-p-18-05-2026",
+      "product_id": "liso-15-colores",
+      "name": "CREMA",
+      "raw_header": "CREMA 73 P (18 05 2026)",
+      "stock_pallets": 73.0,
+      "stock_date": "2026-05-18",
+      "position": 202
+    },
+    {
+      "id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "product_id": "split-15-colores-y-gris",
+      "name": "BLANCO SEVILLA",
+      "raw_header": "BLANCO SEVILLA 8 PALETS (18 05 2026)",
+      "stock_pallets": 8.0,
+      "stock_date": "2026-05-18",
+      "position": 300
+    },
+    {
+      "id": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026",
+      "product_id": "split-15-colores-y-gris",
+      "name": "BLANCO CASTILLA",
+      "raw_header": "BLANCO CASTILLA 35 PALETS (18 05 2026)",
+      "stock_pallets": 35.0,
+      "stock_date": "2026-05-18",
+      "position": 301
+    },
+    {
+      "id": "split-15-colores-y-gris-crema-0-palets-18-04-2026",
+      "product_id": "split-15-colores-y-gris",
+      "name": "CREMA",
+      "raw_header": "CREMA 0 PALETS (18 04 2026)",
+      "stock_pallets": 0.0,
+      "stock_date": "2026-04-18",
+      "position": 302
+    },
+    {
+      "id": "split-15-colores-y-gris-gris-33-palets-18-05-2026",
+      "product_id": "split-15-colores-y-gris",
+      "name": "GRIS",
+      "raw_header": "GRIS 33 PALETS (18 05 2026)",
+      "stock_pallets": 33.0,
+      "stock_date": "2026-05-18",
+      "position": 303
+    },
+    {
+      "id": "split-15-colores-y-gris-salmon-18-palets-18-05-2026",
+      "product_id": "split-15-colores-y-gris",
+      "name": "SALMON",
+      "raw_header": "SALMON 18 PALETS (18 05 2026)",
+      "stock_pallets": 18.0,
+      "stock_date": "2026-05-18",
+      "position": 304
+    },
+    {
+      "id": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026",
+      "product_id": "split-15-colores-y-gris",
+      "name": "AMARILLO",
+      "raw_header": "AMARILLO 26 PALETS (18 05 2026)",
+      "stock_pallets": 26.0,
+      "stock_date": "2026-05-18",
+      "position": 305
+    },
+    {
+      "id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "BL.SEVILLA",
+      "raw_header": "BL.SEVILLA 69 PALETS (18 05 2026)",
+      "stock_pallets": 69.0,
+      "stock_date": "2026-05-18",
+      "position": 400
+    },
+    {
+      "id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "BLANCO CASTILLA",
+      "raw_header": "BLANCO CASTILLA 96 P (18 05 2026)",
+      "stock_pallets": 96.0,
+      "stock_date": "2026-05-18",
+      "position": 401
+    },
+    {
+      "id": "split-20-2caras-crema-33-palets-18-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "CREMA",
+      "raw_header": "CREMA 33 PALETS (18 05 2026)",
+      "stock_pallets": 33.0,
+      "stock_date": "2026-05-18",
+      "position": 402
+    },
+    {
+      "id": "split-20-2caras-gris-66-palets-11-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "GRIS",
+      "raw_header": "GRIS 66 PALETS (11 05 2026)",
+      "stock_pallets": 66.0,
+      "stock_date": "2026-05-11",
+      "position": 403
+    },
+    {
+      "id": "split-20-2caras-salmon-15-palets-18-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "SALMON",
+      "raw_header": "SALMON 15 PALETS (18 05 2026)",
+      "stock_pallets": 15.0,
+      "stock_date": "2026-05-18",
+      "position": 404
+    },
+    {
+      "id": "split-20-2caras-amarillo-19-palets-18-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "AMARILLO",
+      "raw_header": "AMARILLO 19 PALETS (18 05 2026)",
+      "stock_pallets": 19.0,
+      "stock_date": "2026-05-18",
+      "position": 405
+    },
+    {
+      "id": "split-20-2caras-granito-37-palets-18-05-2026",
+      "product_id": "split-20-2caras",
+      "name": "GRANITO",
+      "raw_header": "GRANITO 37 PALETS (18 05 2026)",
+      "stock_pallets": 37.0,
+      "stock_date": "2026-05-18",
+      "position": 406
+    },
+    {
+      "id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "product_id": "bloque-40x20x20-liso-gris",
+      "name": "BLOQUE 40X20X20 LISO GRIS",
+      "raw_header": "BLOQUE 40X20X20 LISO GRIS 300 (20-05-26)",
+      "stock_pallets": 300.0,
+      "stock_date": "2026-05-20",
+      "position": 500
+    },
+    {
+      "id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "product_id": "bloque-40x20x15",
+      "name": "BLOQUE 40X20X15 LISO GRIS",
+      "raw_header": "BLOQUE 40X20X15 LISO GRIS 26 PALETS (19-05-26)",
+      "stock_pallets": 26.0,
+      "stock_date": "2026-05-19",
+      "position": 600
+    },
+    {
+      "id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "product_id": "bloque-h25",
+      "name": "(BLOQUE H 25) 2 PALETS (18-05-26)",
+      "raw_header": "(BLOQUE H 25) 2 PALETS (18-05-26)",
+      "stock_pallets": 2.0,
+      "stock_date": "2026-05-18",
+      "position": 700
+    }
+  ],
+  "orders": [
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "JESUS",
+      "customer": "BARRAL",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:JESUS:9:1"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "JESUS",
+      "customer": "A. EUROPA",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:JESUS:11:1"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "JESUS",
+      "customer": "SARRIA",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:JESUS:13:1"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "JESUS",
+      "customer": "LEROY GETAFE 549709",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:JESUS:19:1"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "JESUS",
+      "customer": "TIEMBLO",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:JESUS:26:1"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "JESUS",
+      "customer": "CNES VERDES EFICIENTES",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:JESUS:28:1"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "Solorzano",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:5:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "GIPV",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:6:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "AC7",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:7:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "MABE",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:8:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "VERONICA LOMINCHAR",
+      "pallets": 16.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:9:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "MURO",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:10:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "ancribea",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:16:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "Candido Parro",
+      "pallets": 11.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:20:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-sevilla-72-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "Candido Parro",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-sevilla-72-18-05-26:FERNANDO:21:4"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "GAMELLA CB",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:JESUS:9:8"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "GAMELLA CB",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:JESUS:10:8"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "RUFINO 26000888",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:JESUS:11:8"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "FLODI",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:JESUS:12:8"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "EUROFOMENTO",
+      "pallets": 104.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:5:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "Ccontreras Añover",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:6:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "COPI",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:7:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "DISMAR DUERO",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:8:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "CENTROCER",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:9:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "CANDIDO PARRO",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:10:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VERACRUZ",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:11:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "CANDIDO PARRO",
+      "pallets": 14.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:13:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "PEREGAR",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:14:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "interiores digar",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:15:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-blanco-castilla-173-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "interiores digar",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-blanco-castilla-173-p-18-05-2026:FERNANDO:16:11"
+    },
+    {
+      "variant_id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "GORMA",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-crema-153-palets-18-05-2026:JESUS:6:15"
+    },
+    {
+      "variant_id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "MAFER",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-crema-153-palets-18-05-2026:JESUS:8:15"
+    },
+    {
+      "variant_id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "NAVAS MOLINERO",
+      "pallets": 21.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-crema-153-palets-18-05-2026:JESUS:9:15"
+    },
+    {
+      "variant_id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "saltoki",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-crema-153-palets-18-05-2026:FERNANDO:5:18"
+    },
+    {
+      "variant_id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ANCRIBEA",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-crema-153-palets-18-05-2026:FERNANDO:6:18"
+    },
+    {
+      "variant_id": "lisos-20-colores-crema-153-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "gonzalez lopez",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-crema-153-palets-18-05-2026:FERNANDO:7:18"
+    },
+    {
+      "variant_id": "lisos-20-colores-salmon-70-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "MERCHAN E HIJOS",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-salmon-70-palets-18-05-2026:JESUS:5:22"
+    },
+    {
+      "variant_id": "lisos-20-colores-salmon-70-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "VERAREN",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-salmon-70-palets-18-05-2026:JESUS:6:22"
+    },
+    {
+      "variant_id": "lisos-20-colores-salmon-70-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ESTRATEGIAS",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-salmon-70-palets-18-05-2026:FERNANDO:5:25"
+    },
+    {
+      "variant_id": "lisos-20-colores-salmon-70-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "COPI",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-salmon-70-palets-18-05-2026:FERNANDO:6:25"
+    },
+    {
+      "variant_id": "lisos-20-colores-salmon-70-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ICD",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-salmon-70-palets-18-05-2026:FERNANDO:7:25"
+    },
+    {
+      "variant_id": "lisos-20-colores-amarillo-91-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "MURO",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-amarillo-91-palets-18-05-2026:FERNANDO:6:32"
+    },
+    {
+      "variant_id": "lisos-20-colores-amarillo-91-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VENTORRO",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "lisos-20-colores-amarillo-91-palets-18-05-2026:FERNANDO:7:32"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "JOHN CLIMA",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:5:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "SARRIA",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:6:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "ANTIGUA",
+      "pallets": 23.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:7:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "JOHN CLIMA",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:8:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "A. EUROPA",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:10:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "EAMA",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:15:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "BERNARDEZ",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:22:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-sevilla-97-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "LEROY GETAFE 549709",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-sevilla-97-palets-18-05-2026:JESUS:24:1"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "PROMACOVI",
+      "pallets": 29.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:JESUS:5:8"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "LA OBRA",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:JESUS:6:8"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "MATUTE Y BARRENO",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:JESUS:7:8"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "LA OBRA",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:JESUS:10:8"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "CANTA",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:JESUS:11:8"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "SARRIA",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:JESUS:15:8"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VICENTE MANZANAS",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:5:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ARDOSAN",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:6:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "EURODEPOT",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:7:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ARDOSAN",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:8:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "CANDIDO PARRO",
+      "pallets": 18.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:10:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "LUIS GARCIA NAVAS",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:11:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "GONZALEZ LOPEZ",
+      "pallets": 9.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:12:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "JOSMORAL",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:14:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "RUFINO 26000938",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:15:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "A lopez 2",
+      "pallets": 48.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:17:11"
+    },
+    {
+      "variant_id": "split-20-colores-b-castilla-64-palets-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "Hnos Perello",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "split-20-colores-b-castilla-64-palets-19-05-2026:FERNANDO:20:11"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "DISMAR",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:JESUS:5:15"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "pelayos",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:JESUS:6:15"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "DISMAR",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:JESUS:8:15"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "GARCIA E HIJOS",
+      "pallets": 18.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:JESUS:11:15"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "GONZALEZ LOPEZ",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:FERNANDO:5:18"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "JOSMORAL",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:FERNANDO:6:18"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "INDIGAR",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:FERNANDO:8:18"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VIRTON",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:FERNANDO:9:18"
+    },
+    {
+      "variant_id": "split-20-colores-crema-20-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "MURO",
+      "pallets": 9.0,
+      "notes": null,
+      "source_key": "split-20-colores-crema-20-palets-18-05-2026:FERNANDO:10:18"
+    },
+    {
+      "variant_id": "split-20-colores-salmon-56-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "MERCHAN E HIJOS",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-salmon-56-palets-18-05-2026:JESUS:5:22"
+    },
+    {
+      "variant_id": "split-20-colores-salmon-56-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "LUDISVINDO",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-colores-salmon-56-palets-18-05-2026:FERNANDO:5:25"
+    },
+    {
+      "variant_id": "split-20-colores-salmon-56-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "PIEDRABUENA",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "split-20-colores-salmon-56-palets-18-05-2026:FERNANDO:6:25"
+    },
+    {
+      "variant_id": "split-20-colores-salmon-56-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "MADECON",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-salmon-56-palets-18-05-2026:FERNANDO:7:25"
+    },
+    {
+      "variant_id": "split-20-colores-salmon-56-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "A lopez 2",
+      "pallets": 17.0,
+      "notes": null,
+      "source_key": "split-20-colores-salmon-56-palets-18-05-2026:FERNANDO:8:25"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "A. EUROPA",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:JESUS:5:29"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "SEÑORIO",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:JESUS:7:29"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "SANZ MARTIN",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:JESUS:8:29"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ANCRIBEA",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:FERNANDO:5:32"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "MURO",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:FERNANDO:6:32"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "REYES CELADA",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:FERNANDO:9:32"
+    },
+    {
+      "variant_id": "split-20-colores-amarillo-0-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "HOCES HUECAR",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "split-20-colores-amarillo-0-palets-18-05-2026:FERNANDO:10:32"
+    },
+    {
+      "variant_id": "split-20-colores-gris-61-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "Ancribea",
+      "pallets": 34.0,
+      "notes": null,
+      "source_key": "split-20-colores-gris-61-palets-18-05-2026:FERNANDO:5:39"
+    },
+    {
+      "variant_id": "split-20-colores-granito-136-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "BERNARDEZ",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "split-20-colores-granito-136-palets-18-05-2026:JESUS:6:43"
+    },
+    {
+      "variant_id": "split-20-colores-granito-136-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "MATUTE Y BARRENO",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-colores-granito-136-palets-18-05-2026:JESUS:8:43"
+    },
+    {
+      "variant_id": "split-20-colores-granito-136-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "TEJAR HUETE",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-colores-granito-136-palets-18-05-2026:FERNANDO:5:46"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "LEROY GETAFE 547354",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:JESUS:11:1"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "LEROY GETAFE 547355",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:JESUS:12:1"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "JESUS",
+      "customer": "LEROY GETAFE 547356",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:JESUS:13:1"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "RUMAR",
+      "pallets": 16.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:FERNANDO:5:4"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "GONZALEZ LOPEZ",
+      "pallets": 26.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:FERNANDO:6:4"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VENTORRO",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:FERNANDO:7:4"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "A11065982",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:FERNANDO:8:4"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "HSG",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:FERNANDO:9:4"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-sevilla-80-p-19-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "PAV ALONSO",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-sevilla-80-p-19-05-2026:FERNANDO:10:4"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "LA OBRA",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-castilla-37-p-18-05-2026:JESUS:5:8"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "macecu",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-castilla-37-p-18-05-2026:FERNANDO:5:11"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "GONZALEZ LOPEZ",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-castilla-37-p-18-05-2026:FERNANDO:6:11"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VERACRUZ",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-castilla-37-p-18-05-2026:FERNANDO:8:11"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "Ancribea",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-castilla-37-p-18-05-2026:FERNANDO:9:11"
+    },
+    {
+      "variant_id": "liso-15-colores-blanco-castilla-37-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "Ancribea",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "liso-15-colores-blanco-castilla-37-p-18-05-2026:FERNANDO:10:11"
+    },
+    {
+      "variant_id": "liso-15-colores-crema-73-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "JERO FLORES",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "liso-15-colores-crema-73-p-18-05-2026:JESUS:5:15"
+    },
+    {
+      "variant_id": "liso-15-colores-crema-73-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SUM SANCHEZ",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "liso-15-colores-crema-73-p-18-05-2026:FERNANDO:5:18"
+    },
+    {
+      "variant_id": "liso-15-colores-crema-73-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SANCHEZ QUINTANAR",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "liso-15-colores-crema-73-p-18-05-2026:FERNANDO:6:18"
+    },
+    {
+      "variant_id": "liso-15-colores-crema-73-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "A LOPEZ",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "liso-15-colores-crema-73-p-18-05-2026:FERNANDO:7:18"
+    },
+    {
+      "variant_id": "liso-15-colores-crema-73-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SANFER",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "liso-15-colores-crema-73-p-18-05-2026:FERNANDO:8:18"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "RICO ESPJ",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:JESUS:5:1"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "VERAREN",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:JESUS:6:1"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "CALYPO",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:FERNANDO:5:4"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "pedro serrano",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:FERNANDO:6:4"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "JOSMORAL",
+      "pallets": 17.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:FERNANDO:8:4"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SALTOKI 442372",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:FERNANDO:9:4"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "A1105982",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-sevilla-8-palets-18-05-2026:FERNANDO:12:4"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ARJOMI",
+      "pallets": 12.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026:FERNANDO:5:11"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "logistik modular",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026:FERNANDO:6:11"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "LUIS GARCIA NAVAS",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-blanco-castilla-35-palets-18-05-2026:FERNANDO:7:11"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-crema-0-palets-18-04-2026",
+      "commercial": "JESUS",
+      "customer": "VERAREN",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-crema-0-palets-18-04-2026:JESUS:5:15"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-crema-0-palets-18-04-2026",
+      "commercial": "JESUS",
+      "customer": "ORTEGA",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-crema-0-palets-18-04-2026:JESUS:6:15"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-crema-0-palets-18-04-2026",
+      "commercial": "FERNANDO",
+      "customer": "ANDRES Y DIEGO",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-crema-0-palets-18-04-2026:FERNANDO:5:18"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-salmon-18-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "NAVAS MOLINERO",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-salmon-18-palets-18-05-2026:JESUS:5:29"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "FDO. GOMEZ",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026:FERNANDO:5:39"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SANFER",
+      "pallets": 13.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026:FERNANDO:6:39"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VERONICA LOMINCHAR",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026:FERNANDO:7:39"
+    },
+    {
+      "variant_id": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VENTORRO",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-15-colores-y-gris-amarillo-26-palets-18-05-2026:FERNANDO:8:39"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "RUFINO",
+      "pallets": 25.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:JESUS:5:1"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "DE LEMA",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:JESUS:6:1"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "SARRIA",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:JESUS:9:1"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "C.TORRES",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:JESUS:11:1"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "C.TOREES",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:JESUS:12:1"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "c. parro",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:5:4"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SAINT GOBAIN",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:6:4"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "JOSMORAL",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:7:4"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "LOS PEPOTES",
+      "pallets": 14.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:8:4"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "A01082648",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:10:4"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VIRTON",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:12:4"
+    },
+    {
+      "variant_id": "split-20-2caras-bl-sevilla-69-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VIRTON (OBRA 972 SS)",
+      "pallets": 42.0,
+      "notes": null,
+      "source_key": "split-20-2caras-bl-sevilla-69-palets-18-05-2026:FERNANDO:13:4"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "CEYCESA",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:JESUS:5:8"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VERACRUZ",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:FERNANDO:5:11"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "arjomi",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:FERNANDO:6:11"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "CONTRERAS AÑOVER",
+      "pallets": 19.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:FERNANDO:7:11"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ALEJANDRO ALONSO",
+      "pallets": 9.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:FERNANDO:8:11"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "Hnos Perello",
+      "pallets": 13.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:FERNANDO:9:11"
+    },
+    {
+      "variant_id": "split-20-2caras-blanco-castilla-96-p-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "a lopez 2",
+      "pallets": 45.0,
+      "notes": null,
+      "source_key": "split-20-2caras-blanco-castilla-96-p-18-05-2026:FERNANDO:10:11"
+    },
+    {
+      "variant_id": "split-20-2caras-crema-33-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "TIEMBLO",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-2caras-crema-33-palets-18-05-2026:JESUS:5:15"
+    },
+    {
+      "variant_id": "split-20-2caras-gris-66-palets-11-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "MADECON",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "split-20-2caras-gris-66-palets-11-05-2026:FERNANDO:5:25"
+    },
+    {
+      "variant_id": "split-20-2caras-salmon-15-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "ISAIAS ABAB",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "split-20-2caras-salmon-15-palets-18-05-2026:JESUS:5:29"
+    },
+    {
+      "variant_id": "split-20-2caras-salmon-15-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "ROMAJE",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "split-20-2caras-salmon-15-palets-18-05-2026:FERNANDO:5:32"
+    },
+    {
+      "variant_id": "split-20-2caras-amarillo-19-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "SANFER",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "split-20-2caras-amarillo-19-palets-18-05-2026:FERNANDO:5:39"
+    },
+    {
+      "variant_id": "split-20-2caras-granito-37-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "BERNARDEZ",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "split-20-2caras-granito-37-palets-18-05-2026:JESUS:6:43"
+    },
+    {
+      "variant_id": "split-20-2caras-granito-37-palets-18-05-2026",
+      "commercial": "JESUS",
+      "customer": "VILLAVICIOSA",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "split-20-2caras-granito-37-palets-18-05-2026:JESUS:8:43"
+    },
+    {
+      "variant_id": "split-20-2caras-granito-37-palets-18-05-2026",
+      "commercial": "FERNANDO",
+      "customer": "VERONICA LOMINCHAR",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "split-20-2caras-granito-37-palets-18-05-2026:FERNANDO:5:46"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "SEGURA E HIJOS SAN SEBATIAN (19-05-26)",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:7:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "MARTIN GAMELLA",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:8:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "BENJAMIN GARCIA",
+      "pallets": 18.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:9:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "RUFINO 26000970",
+      "pallets": 18.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:10:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "PREF OLIVARES",
+      "pallets": 22.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:11:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "RUFINO 26001020",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:12:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "VERAREN (PC0100655)",
+      "pallets": 13.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:15:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "PELAYOS",
+      "pallets": 22.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:16:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "VERAREN (PC0100713)",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:20:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "MATERIALES UCEDA (SEMANA 19)",
+      "pallets": 14.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:21:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "ODORICIO",
+      "pallets": 14.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:32:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "EL TIEMBLO ( 22-05)",
+      "pallets": 15.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:33:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "JYL (SEMANA 19)",
+      "pallets": 15.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:34:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "SUMIOBRAS",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:36:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "OLIMA",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:37:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "MATUTE Y BARRENO",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:38:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "CEYCESA  NAVALCARNERO",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:39:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "ANTERO",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:44:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "TIETAR",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:45:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "ANGEL VARAS",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:46:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "ANTERO",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:49:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "marot",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:50:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "AZULEJOS FUENLABRADA",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:51:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "MAFER",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:53:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "GORMA",
+      "pallets": 7.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:54:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "JESUS",
+      "customer": "PICARDAS",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:JESUS:57:2"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "SALTOKI 447860 (SEMANA19)",
+      "pallets": 5.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:7:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "VERACRUZ (SEMANA 20-21)",
+      "pallets": 23.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:8:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A01082903 (SEMANA 19)",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:9:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "TORRES (19-05-26)",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:10:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "MURO",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:11:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "MATERIALES CEBRIAN",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:12:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "SANFER (SEMANA 19)",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:13:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "TORRES (20-05-26)",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:14:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "VIAS (SEMANA  19)",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:15:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A06109775",
+      "pallets": 12.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:16:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "JOSE LUIS ROJAS (SEMANA 19)",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:17:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "LOZOYA",
+      "pallets": 11.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:18:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A11066103",
+      "pallets": 19.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:20:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "ICD (SEMANA 19)",
+      "pallets": 15.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:21:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "ALMACEN F MARTIN (SEMANA 19)",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:22:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "PROMACOVI",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:23:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "TOLEGRES",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:24:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "ESTRATEGIAS A01082903 (SEMANA 19)",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:25:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A01082903 (SEMANA 19)",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:28:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "PECO",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:30:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "OPORTO E HIJOS (SEMANA 20)",
+      "pallets": 20.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:36:5"
+    },
+    {
+      "variant_id": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26",
+      "commercial": "FERNANDO",
+      "customer": "GONZALEZ LOPEZ",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "bloque-40x20x20-liso-gris-bloque-40x20x20-liso-gris-300-20-05-26:FERNANDO:38:5"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "DISMAR",
+      "pallets": 1.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:6:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "ODORICIO",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:10:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "MATERIALES UCEDA (SEMANA 19)",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:12:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "L. ALCALA 81132182 (SEMANA 19)",
+      "pallets": 9.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:13:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "ESTRATEGIAS A01082903",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:15:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "PELAYOS",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:17:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "DISMAR",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:23:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "PICARDAS",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:24:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "JESUS",
+      "customer": "MARTINEZ MAGALLARES",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:JESUS:27:2"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A01082903",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:FERNANDO:6:5"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "FERNANDO",
+      "customer": "SALTOKI 441981",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:FERNANDO:7:5"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A01082903",
+      "pallets": 4.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:FERNANDO:8:5"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A11065699",
+      "pallets": 2.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:FERNANDO:9:5"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "FERNANDO",
+      "customer": "A10090626",
+      "pallets": 3.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:FERNANDO:11:5"
+    },
+    {
+      "variant_id": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26",
+      "commercial": "FERNANDO",
+      "customer": "ALMACEN F MARTIN (1ª MAYO)",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-40x20x15-bloque-40x20x15-liso-gris-26-palets-19-05-26:FERNANDO:12:5"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "JESUS",
+      "customer": "SILVIU",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:JESUS:7:2"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "JESUS",
+      "customer": "JYL",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:JESUS:8:2"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "JESUS",
+      "customer": "ANTIGUA",
+      "pallets": 10.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:JESUS:14:2"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "JESUS",
+      "customer": "PICARDAS",
+      "pallets": 18.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:JESUS:24:2"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "JESUS",
+      "customer": "SAMACO",
+      "pallets": 25.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:JESUS:25:2"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "JESUS",
+      "customer": "VILLAVCIOSA",
+      "pallets": 25.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:JESUS:26:2"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "MATFER",
+      "pallets": 6.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:FERNANDO:6:5"
+    },
+    {
+      "variant_id": "bloque-h25-bloque-h-25-2-palets-18-05-26",
+      "commercial": "FERNANDO",
+      "customer": "SUM. GONZALEZ LOPEZ",
+      "pallets": 8.0,
+      "notes": null,
+      "source_key": "bloque-h25-bloque-h-25-2-palets-18-05-26:FERNANDO:7:5"
+    }
+  ]
+}

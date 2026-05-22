@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bloques Patio</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+  </head>
+  <body>
+    <div id="loginView" class="login-view">
+      <form id="loginForm" class="login-panel">
+        <div>
+          <p class="eyebrow">Control de palets</p>
+          <h1>Bloques Patio</h1>
+        </div>
+        <label>
+          Contrasena
+          <input id="passwordInput" type="password" autocomplete="current-password" required />
+        </label>
+        <button type="submit">Entrar</button>
+        <p id="loginMessage" class="message"></p>
+      </form>
+    </div>
+
+    <div id="appView" class="app-shell hidden">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Bloques Patio</p>
+          <h1>Existencias y pedidos</h1>
+        </div>
+        <div class="topbar-actions">
+          <span id="syncState" class="sync-state">Sin conectar</span>
+          <button id="seedButton" class="secondary" type="button">Importar Excel inicial</button>
+          <button id="logoutButton" class="secondary" type="button">Salir</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <div class="toolbar">
+            <input id="searchInput" type="search" placeholder="Buscar bloque, variante o cliente" />
+          </div>
+          <div id="productList" class="product-list"></div>
+        </aside>
+
+        <section class="content">
+          <div class="summary-grid">
+            <div>
+              <span>Stock</span>
+              <strong id="totalStock">0</strong>
+            </div>
+            <div>
+              <span>Reservado</span>
+              <strong id="totalReserved">0</strong>
+            </div>
+            <div>
+              <span>Disponible</span>
+              <strong id="totalAvailable">0</strong>
+            </div>
+            <div>
+              <span>Variantes</span>
+              <strong id="totalVariants">0</strong>
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Variante seleccionada</p>
+                  <h2 id="variantTitle">Selecciona una variante</h2>
+                </div>
+              </div>
+              <div id="variantDetail" class="variant-detail empty-state">
+                Elige una variante para ver sus pedidos.
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Nuevo pedido</p>
+                  <h2>Anadir reserva</h2>
+                </div>
+              </div>
+              <form id="orderForm" class="order-form">
+                <label>
+                  Comercial
+                  <select id="commercialInput" required>
+                    <option value="JESUS">Jesus</option>
+                    <option value="FERNANDO">Fernando</option>
+                  </select>
+                </label>
+                <label>
+                  Cliente / obra
+                  <input id="customerInput" required maxlength="120" />
+                </label>
+                <label>
+                  Palets
+                  <input id="palletsInput" type="number" min="0.01" step="0.01" required />
+                </label>
+                <label>
+                  Notas
+                  <textarea id="notesInput" rows="3"></textarea>
+                </label>
+                <button type="submit">Guardar pedido</button>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="variantTemplate">
+      <button class="variant-row" type="button">
+        <span class="variant-name"></span>
+        <span class="variant-metrics"></span>
+      </button>
+    </template>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
+
